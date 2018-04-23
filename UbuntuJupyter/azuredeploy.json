@@ -41,7 +41,7 @@
         "diagStorageAccountId": "[if(equals(parameters('diagStorageAccountId'),'null'), variables('genStorageAccountId'), parameters('diagStorageAccountId'))]",
         "genVnetid": "[resourceId('Microsoft.Network/virtualNetworks', variables('genVnetName'))]",
         "subnetId": "[concat(variables('genVnetid'), '/subnets/default')]",
-        "extensionScriptUrl": "[uri(deployment().properties.templateLink.uri, 'configure_jupyter.sh')]",
+        "extensionScriptUrl": "[uri('https://raw.githubusercontent.com/hansenms/LinuxVms/master/UbuntuJupyter/azuredeploy.json', 'configure_jupyter.sh')]",
         "extensionName": "jupyterExtension"
     },
     "resources": [
